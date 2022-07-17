@@ -16,8 +16,10 @@ var speakWord = "Good Bye";
 // STEP 8: Rewrite the 'speak' function such that it is attached to the
 // byeSpeaker object instead of being a standalone function.
 // See Lecture 52, part 2
-function speak(name) {
-  console.log(speakWord + " " + name);
+var byeSpeaker = {};
+byeSpeaker.name = names[i];
+byeSpeaker.speak(names[i]) = function () {
+  console.log(speakWord + " " + byeSpeaker.names[i]);
 }
 
 // STEP 9: Expose the 'byeSpeaker' object to the global scope. Name it
