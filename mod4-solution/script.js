@@ -34,23 +34,12 @@ WARNING!!! WARNING!!!
 // See Lecture 52, part 2
 // (Note, Step 2 will be done in the SpeakHello.js file.)
 
-var names = new Array();
-names[0]="Yaakov";
-names[1]="John";
-names[2]="Jen";
-names[3]="Jason";
-names[4]="Paul";
-names[5]="Frank";
-names[6]="Larry";
-names[7]="Paula";
-names[8]="Laura";
-names[9]="Jim";
 
 // STEP 10: (NOTHING TO DO. ALREADY DONE FOR YOU)
 // Loop over the names array and say either 'Hello' or "Good Bye"
 // using either the helloSpeaker's or byeSpeaker's 'speak' method.
 // See Lecture 50, part 1
-for (var i = 0; i < names.length; i++) {
+
 
   // STEP 11: (NOTHING TO DO. ALREADY DONE FOR YOU)
   // Retrieve the first letter of the current name in the loop.
@@ -69,13 +58,24 @@ for (var i = 0; i < names.length; i++) {
   // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
   // name in the loop.
 
-  if (names[i].charAt(0) === 'j' || names[i].charAt(0) === 'J') {
-    console.log("Goodbye " + names[i])
-  }
-  else{
-    console.log("Hello " + names[i])
-  }
-}
+
+
+(function() {
+    var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+    for (var i = 0; i < names.length; i++) {
+        var firstLetter = names[i].charAt(0).toLowerCase();
+        if (firstLetter === 'j') {
+            byeSpeaker.speak(names[i]);
+        } else {
+            helloSpeaker.speak(names[i]);
+        }
+    }
+})();
+
+
+
+
+
 //     byeSpeaker.speak(names[i]);
 //   } else {
 //     helloSpeaker.speak(names[i]);
